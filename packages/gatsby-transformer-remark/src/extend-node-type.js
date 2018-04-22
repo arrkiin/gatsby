@@ -321,6 +321,12 @@ module.exports = (
     })
 
     return resolve({
+      ast: {
+        type: GraphQlJson,
+        resolve(markdownNode) {
+          return getAST(markdownNode)
+        }
+      },
       html: {
         type: GraphQLString,
         resolve(markdownNode) {
